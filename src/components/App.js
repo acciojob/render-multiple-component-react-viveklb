@@ -1,23 +1,32 @@
 import React from "react";
+import "../styles/App.css";
+
+const projects = [
+  {
+    name: "AI-Based Healthcare Assistant",
+    description: "A web application that helps users monitor their health."
+  },
+  {
+    name: "Smart Farming System",
+    description: "An IoT-based system for crop monitoring."
+  },
+  {
+    name: "Online Learning Platform",
+    description: "A platform for interactive learning."
+  }
+];
 
 const App = () => {
-  const cities = [
-    "Mumbai",
-    "Delhi",
-    "Bengaluru",
-    "Hyderabad",
-    "Chennai"
-  ];
-
   return (
     <div id="main">
-      <ol>
-        {cities.map((city, index) => (
-          <li key={`location${index + 1}`}>
-            {city}
-          </li>
-        ))}
-      </ol>
+      {projects.map((project, index) => (
+        <div key={index}>
+          <h1 data-ns-test="project-name">{project.name}</h1>
+          <h6 data-ns-test="project-description">
+            {project.description}
+          </h6>
+        </div>
+      ))}
     </div>
   );
 };
